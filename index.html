@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-CN"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;CATI - 测测你是什么猫格&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 纸片简约风 / 粗野主义设计 (Neo-Brutalism) */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--bg-color: #fff9f0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--text-color: #2b2b2b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--border-color: #2b2b2b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--primary-color: #ffd166; /* 橘猫黄 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--secondary-color: #ef476f; /* 肉垫粉 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--accent-color: #118ab2; /* 蓝猫蓝 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--card-shadow: 6px 6px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--btn-shadow: 4px 4px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>* { box-sizing: border-box; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#app {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 500px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 3px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: var(--card-shadow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 30px 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h1, h2, h3 { margin-top: 0; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 进度条 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.progress-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.progress-bar {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 0%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: width 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 按钮与选项 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: var(--btn-shadow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.1s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn:active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translate(4px, 4px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0px 0px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-start {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--primary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.option:hover { background-color: var(--bg-color); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 页面切换控制 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.screen { display: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.screen.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.4s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(10px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 结果页特殊样式 */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 1️⃣ 新增：立绘图片容器样式 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.cat-illustration {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 220px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 3px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 4px 4px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.cat-illustration img {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>object-fit: cover; /* 确保图片铺满且不变形 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.cat-illustration .placeholder-text {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #888;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-type {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 32px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 900;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--accent-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 10px 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-shadow: 2px 2px 0px rgba(0,0,0,0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-name {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 24px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--bg-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.product-box {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--secondary-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 4px 4px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.product-box h3 { margin-bottom: 10px; color: white; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 2️⃣ 修改：将按钮适配为 &lt;a&gt; 标签的样式 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.buy-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-decoration: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 2px 2px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.1s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.buy-btn:active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translate(2px, 2px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0px 0px 0px var(--border-color);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="app"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="screen-start" class="screen active"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1 style="font-size: 36px; text-align: center;"&gt;🐱 CATI&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2 style="text-align: center;"&gt;测测你的内在猫格&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p style="text-align: center; color: #666; line-height: 1.6;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>放弃抵抗吧！在这个充满伪人、吗喽和牛马的世界里，&lt;br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>你的灵魂深处，究竟藏着一只什么状态的猫？&lt;br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>（全网首发·极度真实·轻微发疯）</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-start" onclick="startTest()"&gt;开始诊断 🐾&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="progress-container" id="progress-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="progress-bar" id="progress-bar"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="screen-question" class="screen"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p style="color: #888; font-size: 14px; font-weight: bold;" id="q-counter"&gt;1 / 15&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2 id="q-title" style="font-size: 20px; margin-bottom: 20px; line-height: 1.4;"&gt;&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn option" id="opt-a" onclick="selectOption('A')"&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="btn option" id="opt-b" onclick="selectOption('B')"&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="screen-result" class="screen"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 style="text-align: center; color: #666; margin-bottom: 0;"&gt;你的鉴定报告出来了...&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="cat-illustration"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="placeholder-text" id="r-img-placeholder"&gt;图片加载中...&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;img id="r-img" src="" alt="猫咪立绘" style="display: none;" onload="this.style.display='block'; document.getElementById('r-img-placeholder').style.display='none';"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="result-type" id="r-type"&gt;ECFD&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="result-name" id="r-name"&gt;😼 赛博悍匪猫&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="result-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;strong&gt;【人格解析】&lt;/strong&gt;&lt;br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span id="r-desc"&gt;这里是解析文案&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="product-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3&gt;💊 你的专属精神解药&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p id="r-product-desc" style="font-size: 14px; margin-bottom: 15px;"&gt;这里是带货话术&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div style="font-size: 24px; margin-bottom: 10px;" id="r-product-name"&gt;【玩具名称】&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="#" target="_blank" class="buy-btn" id="r-shop-link"&gt;立即拿下 🛒&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- 题库数据 ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const questions = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 社交力 (E/I)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "周末朋友突然组局喊你出去嗨，你的真实内心OS是：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "冲！这周的班我是一秒钟都上不下去了，必须出去撒野！", aVal: "E",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "烦死了，又要洗头化妆。能不能装死假装没看到消息？", bVal: "I" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "在群里不小心发错了一个极其丢人的表情包，你会：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "只要我不尴尬，尴尬的就是别人，顺势再发十个表情包刷屏！", aVal: "E",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "光速撤回，并在接下来的三天里连夜制定逃离地球的计划。", bVal: "I" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "路上遇到极其心动的Crush，你的操作是：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "走上前去一记直球：“嗨，能加个微信吗？”", aVal: "E",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "默默记下长相，回家疯狂搜索，现实中连对视都不敢。", bVal: "I" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "进了一家陌生的店，导购非常热情地迎上来，你会：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "顺水推舟跟她聊起来，甚至走的时候加了导购微信。", aVal: "E",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "浑身紧绷，脚趾抠地，只说一句“我随便看看”然后火速逃离。", bVal: "I" },</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 精神状态 (C/B)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "晚上11点半，你本该睡觉了，但此刻你的大脑：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "突然异常清醒！开始复盘十年前那场没吵赢的架，或思考宇宙起源。", aVal: "C",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "自动关机中。天塌下来也得等我睡醒再说。", bVal: "B" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "面对领导/老师突如其来的无理要求（比如周末加班），你的第一反应：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "内心有1万只尖叫鸡在咆哮，恨不得当场创死所有人！", aVal: "C",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "“哦，好的。”心如止水，熟练地打开摸鱼软件开始混时间。", bVal: "B" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "吃瓜吃到自己认识的人身上，你的状态是：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "瞳孔地震！上蹿下跳在各个群里疯狂转发：“惊天大瓜！速来！”", aVal: "C",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "默默看完聊天记录，内心毫无波澜地打出一个“哦”。", bVal: "B" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "当你遭遇人生挫折（比如丢了钱/搞砸了项目）时：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "持续性精神内耗，反复折磨自己，甚至想半夜去阳台嚎两嗓子。", aVal: "C",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "叹口气，点杯最贵的奶茶/外卖安慰自己，吃完就算了。", bVal: "B" },</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 脾气底色 (S/F)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "有求于人时（比如找朋友借VIP账号），你会：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "熟练切换萌妹/奶狗语气，疯狂发“求求了”“贴贴”等表情包。", aVal: "S",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "强装镇定，直奔主题，如果对方拒绝就冷酷地说“行，拉倒”。", bVal: "F" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "别人对你进行“画大饼”式的长篇大论说教时：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "表面乖巧点头，疯狂附和“对对对”“您说得太有道理了”。", aVal: "S",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "眉头紧锁，随时准备阴阳怪气地怼回去，主打一个天生反骨。", bVal: "F" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "谈恋爱或交朋友时，你的边界感是：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "喜欢谁就恨不得24小时黏在一起，连体婴本婴。", aVal: "S",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "莫挨老子！保持距离产生美，太黏糊会让我感到窒息。", bVal: "F" },</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 行动力 (D/L)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "看到桌子边缘放着一个即将掉下去的水杯，你的手：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "不知道为什么，就是很想轻轻推一把看它碎掉……", aVal: "D",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "懒得管，只要别砸到我脚上就行。", bVal: "L" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "拿到一个期待已久的新快递，你的处理方式：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "暴力撕开快递盒，包装扔得满天飞，主打一个迫不及待！", aVal: "D",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "放在角落积灰三天，等哪天实在无聊了才想起来拿剪刀慢慢拆。", bVal: "L" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "放假在家时，你最常见的姿势是：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "根本闲不住！大扫除、重新布置房间、甚至想把地板抠出花来。", aVal: "D",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "床—沙发—马桶—床，像一滩液体一样融入家具。", bVal: "L" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{ t: "面对生活里的麻烦事，你的解决哲学是：",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>a: "一顿操作猛如虎，不管三七二十一先折腾一番再说！", aVal: "D",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>b: "拖延症晚期。只要我不理它，麻烦就会自己解决。", bVal: "L" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// --- 结果归类逻辑与带货文案 ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const resultsData = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"悍匪": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>name: "😼 赛博悍匪猫 (奶牛猫体质)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>desc: "你就是传说中人见人愁、狗见狗愁的纯正悍匪！精力旺盛到可以单挑整个小区，精神状态遥遥领先，每天不是在发疯就是在发疯的路上。破坏力极强，拒绝内耗，直接发疯！",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productDesc: "你的内在/你的主子急需物理发泄！完美消耗你们无处安放的破坏欲，拯救你家的沙发！",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productName: "【手搓逗猫棒头】",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 👇 替换为你的【悍匪猫】图链及对应的【小红书商品链接】</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>imgSrc: "https://test.fukit.cn/autoupload/f/dp1Cc7AVkEP1Zv8P3DqoMdiO_OyvX7mIgxFBfDMDErs/20260415/Vg4M/332X332/IMG_8771%281%29.JPG/webp",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>shopLink: "https://xhslink.com/m/2N6P5IFEi45"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"白月光": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>name: "🍵 绿茶白月光猫 (布偶猫体质)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>desc: "你将“非暴力不合作”演绎到了极致。表面甜美乖巧，实则懒癌晚期。能坐着绝不站着，最喜欢在暗处默默吃瓜，主打一个毫不费力的松弛感。天生就是享福的命！",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productDesc: "只有顶级的精神抚慰才能配得上高贵的你。适合你的猫抱着狂吸，躺着就能获得颅内高潮，符合你躺平的人设！",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productName: "【纯羊毛大号猫棉签玩具】",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 👇 替换为你的【白月光猫】图链及对应的【小红书商品链接】</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>imgSrc: "https://test.fukit.cn/autoupload/f/dp1Cc7AVkEP1Zv8P3DqoMdiO_OyvX7mIgxFBfDMDErs/20260415/Qg2g/294X294/IMG_8771%282%29.JPG/webp",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>shopLink: "https://xhslink.com/m/2N6P5IFEi45"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"吗喽": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>name: "🐒 阴暗爬行吗喽猫 (黑猫体质)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>desc: "白天装死，半夜精神；生人面前社恐，熟人面前重拳出击。你看起来软趴趴的，但内心藏着一个随时准备爆炸的小宇宙，谁惹你谁倒霉，随时准备阴暗爬行。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productDesc: "你的阴暗面需要被治愈！躲在角落里偷偷玩，不用社交也能释放捕猎天性，一人一猫共同解压。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productName: “【解压兔毛球】”,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 👇 替换为你的【吗喽猫】图链及对应的【小红书商品链接】</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>imgSrc: "https://test.fukit.cn/autoupload/f/dp1Cc7AVkEP1Zv8P3DqoMdiO_OyvX7mIgxFBfDMDErs/20260415/yUSo/320X320/IMG_8771%283%29.JPG/webp",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>shopLink: "https://xhslink.com/m/2N6P5IFEi45"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"贪吃": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>name: "🍗 腹黑贪吃猫 (大橘为重)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>desc: "看起来情绪稳定、人畜无害，实际上为了吃可以不择手段。有点小聪明，有点小腹黑，最喜欢一边揣手手一边用眼神指使别人干活，十橘九手贱说的就是你。",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productDesc: "没有什么比吃更能驱动你了！用美食和智慧控制TA的破坏欲，让TA在吃中安静下来，不再烦你！",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>productName: "【掏掏乐冻干藏食玩具】”,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 👇 替换为你的【贪吃猫】图链及对应的【小红书商品链接】</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>imgSrc: "https://test.fukit.cn/autoupload/f/dp1Cc7AVkEP1Zv8P3DqoMdiO_OyvX7mIgxFBfDMDErs/20260415/8h9n/340X340/IMG_8771.JPG/webp",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>shopLink: "https://xhslink.com/m/2N6P5IFEi45"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 状态管理</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let currentIdx = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let scores = { E:0, I:0, C:0, B:0, S:0, F:0, D:0, L:0 };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function startTest() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('screen-start').classList.remove('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('progress-container').style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('screen-question').classList.add('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderQuestion();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderQuestion() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const q = questions[currentIdx];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('q-counter').innerText = `${currentIdx + 1} / 15`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('q-title').innerText = q.t;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const btnA = document.getElementById('opt-a');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const btnB = document.getElementById('opt-b');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btnA.innerText = "A. " + q.a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btnA.onclick = () =&gt; handleAnswer(q.aVal);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btnB.innerText = "B. " + q.b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btnB.onclick = () =&gt; handleAnswer(q.bVal);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 更新进度条</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const percent = ((currentIdx) / 15) * 100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('progress-bar').style.width = percent + '%';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function handleAnswer(val) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>scores[val]++;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>currentIdx++;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (currentIdx &lt; questions.length) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderQuestion();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('progress-bar').style.width = '100%';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(showResult, 300);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showResult() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('screen-question').classList.remove('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('progress-container').style.display = 'none';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 计算四字人格</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dim1 = scores.E &gt;= scores.I ? 'E' : 'I';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dim2 = scores.C &gt;= scores.B ? 'C' : 'B';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dim3 = scores.S &gt;= scores.F ? 'S' : 'F';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dim4 = scores.D &gt;= scores.L ? 'D' : 'L';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const finalType = dim1 + dim2 + dim3 + dim4;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 粗略归类逻辑</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let categoryKey = "贪吃"; // 默认兜底</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (dim1 === 'E' &amp;&amp; dim4 === 'D') categoryKey = "悍匪";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>else if (dim2 === 'B' &amp;&amp; dim4 === 'L') categoryKey = "白月光";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>else if (dim1 === 'I' &amp;&amp; dim2 === 'C') categoryKey = "吗喽";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>else if (dim2 === 'B' &amp;&amp; dim4 === 'D') categoryKey = "贪吃";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>else if (dim1 === 'I' &amp;&amp; dim4 === 'L') categoryKey = "白月光";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>else if (dim2 === 'C' &amp;&amp; dim3 === 'F') categoryKey = "吗喽";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>else categoryKey = "悍匪"; // 剩余暴躁老哥一律打成悍匪</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const res = resultsData[categoryKey];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 渲染文案</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-type').innerText = finalType;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-name').innerText = res.name;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-desc').innerText = res.desc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-product-desc').innerText = res.productDesc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-product-name').innerText = res.productName;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 渲染立绘和购物链接</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-img').src = res.imgSrc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('r-shop-link').href = res.shopLink;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('screen-result').classList.add('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
